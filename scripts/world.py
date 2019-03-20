@@ -1,8 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from obstacles import Square, Circle
-from robot import robot_ik, robot_fk, solve_coeffs, generate_path
-from math import pi
+from robot import solve_coeffs, generate_path
 from plot_utils import *
 
 # Populate world with obstacles
