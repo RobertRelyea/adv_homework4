@@ -3,14 +3,15 @@ import math
 
 DEFAULT_NUM_POINTS = 100
 
-'''
+
+class Obstacle():
+    '''
     Class representing an obstacle in the robot's environment.
 
     Members:
         center     -- Tuple containing center of obstacle in coordinate frame.
         num_points -- Integer representing the number of points for plotting.
-'''
-class Obstacle():
+    '''
     def __init__(self, center, num_points):
         self.center = center
         self.num_points = num_points
@@ -32,13 +33,14 @@ class Obstacle():
     def get_points(self):
         return self.points
 
-'''
+
+class Square(Obstacle):
+    '''
     Class representing a square obstacle in the robot's environment.
 
     Members:
         length -- Length of square edges
-'''
-class Square(Obstacle):
+    '''
     def __init__(self, center, length, num_points=DEFAULT_NUM_POINTS):
         self.length = length
         super(Square, self).__init__(center, num_points)
@@ -66,13 +68,14 @@ class Square(Obstacle):
         self.points = np.concatenate((top, left, bottom, right))
         self.points += np.array(self.center)
 
-'''
+
+class Circle(Obstacle):
+    '''
     Class representing a circle obstacle in the robot's environment.
 
     Members:
         radius -- Radius of circle
-'''
-class Circle(Obstacle):
+    '''
     def __init__(self, center, radius, num_points=DEFAULT_NUM_POINTS):
         self.radius = radius
         super(Circle, self).__init__(center, num_points)
