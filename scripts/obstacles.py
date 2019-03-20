@@ -3,7 +3,6 @@ import math
 
 DEFAULT_NUM_POINTS = 100
 
-
 class Obstacle():
     '''
     Class representing an obstacle in the robot's environment.
